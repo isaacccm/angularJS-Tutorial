@@ -1,7 +1,36 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html>
+<!doctype html>
+
+<!-- This module is about how to connect to Camera through Iphone and Android OS.
+     The module is also ended up to send the user id that captured QR code.
+ -->
+
+<!-- ng-init is a directive that initializes application data by assigning
+variable values -->
+<html ng-app="sendQRData" >
+    <head>
+        <title>Camera Module</title>
+    </head>
+    <body>
+
+    <div ng-controller="QRDataController">
+
+        <p />
+
+        <input type="file" accept="image/*" capture="camera">
+
+        <p />
+        <span>Take a picture for QR code, and then press
+            <button ng-click="sendData()">Send</button>
+             button.
+         </span>
+        <p />
+
+    </div>
+
+    <!-- Load the AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+    <!-- Load the JS Module -->
+    <script src="js/exam4.js"></script>
+  </body>
+  </html>

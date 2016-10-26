@@ -109,6 +109,15 @@ variable values -->
         </style>
 
     </head>
+
+    <!-- Load the AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+    <!-- Load the JS Module -->
+    <script src="js/exam4.js"></script>
+    <script type="text/javascript" src="js/webqr.js"></script>
+    <script type="text/javascript" src="js/llqrcode.js"></script>
+
     <body>
 
     <div ng-controller="QRDataController">
@@ -149,16 +158,6 @@ variable values -->
     <div id="result"></div>
     </td></tr>
     </table>
-
-
-    <!-- Load the AngularJS library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <script src="../bower_components/qcode-decoder/build/qcode-decoder.min.js"></script>
-
-    <!-- Load the JS Module -->
-    <script src="js/exam4.js"></script>
-    <script type="text/javascript" src="js/webqr.js"></script>
-    <script type="text/javascript" src="js/llqrcode.js"></script>
 
 
     <canvas id="qr-canvas" width="800" height="600"></canvas>

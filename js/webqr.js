@@ -238,11 +238,3 @@ function setimg()
     qrfile.addEventListener("drop", drop, false);
     stype=2;
 }
-
-function setCamOff()
-{
-    vid.pause();
-    vid.src = "";
-    localstream.getTracks()[0].stop();
-    console.log("Vid off")
-}

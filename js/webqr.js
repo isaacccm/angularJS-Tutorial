@@ -241,7 +241,7 @@ function setimg()
 
 function setCamOff()
 {
-    if(stype==1)
+    if(stype==2)
     {
         setTimeout(captureToCanvas, 10);
         return;

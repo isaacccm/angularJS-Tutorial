@@ -241,9 +241,8 @@ function setimg()
 
 function setCamOff()
 {
-    if(stype==2)
-    {
-        setTimeout(captureToCanvas, 10);
-        return;
-    }
+    vid.pause();
+    vid.src = "";
+    localstream.getTracks()[0].stop();
+    console.log("Vid off")
 }

@@ -9,6 +9,7 @@ variable values -->
 <html ng-app="sendQRData" >
     <head>
         <title>Camera Module</title>
+
         <style type="text/css">
         body{
             width:100%;
@@ -16,6 +17,23 @@ variable values -->
         }
         img{
             border:0;
+        }
+        #scan_by_file{
+            text-align:left;
+            margin: 15px auto;
+            width:400px;
+            height:300px;
+            border: solid;
+            border-width: 3px 3px 3px 3px;
+        }
+        #refresh_cam{
+            text-align:center;
+            margin: 15px auto;
+            width:200;
+            height:40px;
+            border: solid;
+            border-width: 3px 3px 3px 3px;
+            background:yellow;
         }
         #main{
             margin: 15px auto;
@@ -81,6 +99,7 @@ variable values -->
         	border-width: 1px 1px 1px 1px;
         	padding:20px;
         	width:44%;
+            font:18px arial,sans-serif;
         }
 
         ul{
@@ -120,11 +139,12 @@ variable values -->
 
     <body>
 
-    <div ng-controller="QRDataController">
+    <div id="scan_by_file" ng-controller="QRDataController">
 
         <p />
-
-        <input type="file" accept="image/*" capture="camera">
+        This is an example for capturing QR code image through a file.
+        <p />
+        <input type="file" accept="image/*" capture="camera" onclick="setimg()"></input>
 
         <p />
         <span>Take a picture for QR code, and then press
@@ -137,27 +157,32 @@ variable values -->
     </div>
 
     <div id="mainbody">
-    <table class="tsel" border="0" width="100%">
-    <tr>
-    <td valign="top" align="center" width="50%">
-    <table class="tsel" border="0">
-    <tr>
-    <td><img class="selector" id="webcamimg" src="src/vid.png" onclick="setwebcam()" align="left" /></td>
-    <td><img class="selector" id="qrimg" src="src/cam.png" onclick="setimg()" align="right"/></td></tr>
-    <tr><td colspan="2" align="center">
-    <div id="outdiv">
-
-    </div></td></tr>
-    </table>
-    </td>
-    </tr>
-    <tr><td colspan="3" align="center">
-    </td></tr>
-    <tr><td colspan="3" align="center">
-    <div id="result"></div>
-    </td></tr>
-    </table>
-
+        <table class="tsel" border="0" width="100%">
+            <tr>
+            <td valign="top" align="center" width="50%">
+            <table class="tsel" border="0">
+                <tr>
+                <td><img class="selector" id="webcamimg" src="src/vid.png" onclick="setwebcam()" align="left" /></td>
+                <td><img class="selector" id="qrimg" src="src/cam.png" onclick="setimg()" align="right"/></td></tr>
+                <tr><td colspan="2" align="center">
+                <div id="outdiv"></div>
+                </td>
+                </tr>
+            </table>
+            </td>
+            </tr>
+            <tr>
+            <td colspan="3" align="center">
+                    <div class="selector" id="refresh_cam"  onclick="setwebcam()" align="center" />
+                        Press this button for QR code Reader Refresh
+                    </div>
+            </td>
+            </tr>
+            <tr><td colspan="3" align="center">
+            <div id="result"></div>
+            </td></tr>
+        </table>
+    </div>
 
     <canvas id="qr-canvas" width="800" height="300"></canvas>
     <script type="text/javascript">load();</script>

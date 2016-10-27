@@ -222,6 +222,37 @@ function setwebcam2(options)
     setTimeout(captureToCanvas, 500);
 }
 
+function setwebcamOff()
+{
+
+	var options = false;
+	if(navigator.mediaDevices && navigator.mediaDevices.enumerateDevices)
+	{
+		try{
+			navigator.mediaDevices.enumerateDevices()
+			.then(function(devices) {
+			  devices.forEach(function(device) {
+				if (device.kind === 'videoinput') {
+				  if(device.label.toLowerCase().search("back") >-1)
+					options={'deviceId': {'exact':device.deviceId}, 'facingMode':'environment'} ;
+				}
+				console.log(device.kind + ": " + device.label +" id = " + device.deviceId);
+			  });
+			  setwebcam2(options);
+			});
+		}
+		catch(e)
+		{
+			console.log(e);
+		}
+	}
+	else{
+		console.log("no navigator.mediaDevices.enumerateDevices" );
+		setwebcam2(options);
+	}
+
+}
+
 function setimg()
 {
 	document.getElementById("result").innerHTML="- QR file result shows here -";

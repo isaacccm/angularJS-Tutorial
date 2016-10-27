@@ -148,7 +148,7 @@ variable values -->
 
         <p />
         <span>Take a picture for QR code, and then press
-            <button ng-click="sendData()" onclick="setimg()">Send</button>
+            <button ng-click="sendData()" >Send</button>
              button.
          </span>
         <p />
@@ -165,6 +165,7 @@ variable values -->
                 <td><img class="selector" id="webcamimg" src="src/vid.png" onclick="setwebcam()" align="left" /></td>
                 <td><img class="selector" id="qrimg" src="src/cam.png" onclick="setimg()" align="right"/></td></tr>
                 <tr><td colspan="2" align="center">
+                <div id="outdiv"></div>
                 </td>
                 </tr>
             </table>

@@ -144,11 +144,11 @@ variable values -->
         <p />
         This is an example for capturing QR code image through a file.
         <p />
-        <input type="file" accept="image/*" capture="camera" onclick="setimg()"></input>
+        <input type="file" accept="image/*" capture="camera"></input>
 
         <p />
         <span>Take a picture for QR code, and then press
-            <button ng-click="sendData()">Send</button>
+            <button ng-click="sendData()" onclick="setimg()">Send</button>
              button.
          </span>
         <p />

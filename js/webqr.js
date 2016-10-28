@@ -10,6 +10,8 @@ var webkit=false;
 var moz=false;
 var v=null;
 
+
+
 var imghtml='<div id="qrfile"><canvas id="out-canvas" width="320" height="240"></canvas>'+
     '<div id="imghelp">drag and drop a QRCode here'+
 	'<br>or select a file'+
@@ -108,6 +110,7 @@ function read(a)
         html+="<a target='_blank' href='"+a+"'>"+a+"</a><br>";
     html+="<b>"+htmlEntities(a)+"</b><br><br>";
     document.getElementById("result").innerHTML=html;
+    qr_id= html;
 }
 
 function isCanvasSupported(){
@@ -238,3 +241,25 @@ function setimg()
     qrfile.addEventListener("drop", drop, false);
     stype=2;
 }
+
+/*global angular */
+var app = angular.module('sendQRData', []);
+app.controller('FetchController', function($scope, $http) {
+
+    var qr_id = document.getElementById("result").innerHTML;
+    $scope.name = qr_id;
+
+
+
+    $http.get("http://54.227.229.1:3000/userlist").then(function(response) {
+        $scope.myData = response.data;
+            console.log(qr_id);
+    });
+
+    //Seaches by the beginning of strings
+    $scope.startsWith = function (actual, expected) {
+      var lowerStr = (actual + "").toLowerCase();
+      return lowerStr.indexOf(expected.toLowerCase()) == 0;
+    }
+
+});

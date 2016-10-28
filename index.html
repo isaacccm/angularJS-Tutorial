@@ -18,6 +18,16 @@ variable values -->
         img{
             border:0;
         }
+        #result_by_server{
+            width:400px;
+            height:auto;
+            border: solid;
+            border-width: 1px 1px 1px 1px;
+            padding:20px;
+            width:44%;
+            font:16px arial,sans-serif;
+        }
+
         #refresh_cam{
             text-align:center;
             margin: 15px;
@@ -161,6 +171,18 @@ variable values -->
             </tr>
             <tr><td colspan="3" align="center">
             <div id="result"></div>
+            <div id="result_by_server" ng-controller="FetchController">
+                {{name}}
+                <ul>
+                    <lp ng-repeat="list in myData | filter:name:startWith">
+                    {{      'ID:' + list.ukc_id +
+                        ', Date:' + list.date   +
+                        ', Name:' + list.name   +
+                        ', Meal:' + list.meal      }}
+                    </lp>
+                </ul>
+
+            </div>
             </td></tr>
         </table>
     </div>

@@ -1,0 +1,86 @@
+<!doctype html>
+
+<!-- This module is about how to connect to Camera through Iphone and Android OS.
+     The module is also ended up to send the user id that captured QR code.
+ -->
+
+<html ng-app="sendQRData" >
+    <head>
+        <title>Camera Module Test Page1</title>
+
+        <style type="text/css">
+            body{
+                width:100%;
+                text-align:center;
+            }
+            img{
+                border:0;
+            }
+            #scan_by_file{
+                text-align:left;
+                margin: 15px auto;
+                width:400px;
+                height:300px;
+                border: solid;
+                border-width: 3px 3px 3px 3px;
+            }
+
+            #footer{
+                position: fixed;
+                 bottom: 0;
+                 left: 0;
+                 height: 70px;
+                 background-color: white;
+                 width: 100%;
+            }
+            
+            li{
+                display:inline;
+                padding-right: 0.5em;
+                padding-left: 0.5em;
+                font-weight: bold;
+                border-right: 1px solid #333333;
+            }
+
+            li a{
+                text-decoration: none;
+                color: black;
+            }
+        </style>
+
+    </head>
+
+    <!-- Load the AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+    <!-- Load the JS Module -->
+    <script src="js/exam4.js"></script>
+
+    <body>
+
+    <div id="scan_by_file" ng-controller="QRDataController">
+
+        <p />
+        This is an example for capturing QR code image through a file.
+        <p />
+        <input type="file" accept="image/*" capture="camera"></input>
+
+        <p />
+        <span>Take a picture for QR code, and then press
+            <button ng-click="sendData()" >Send</button>
+             button.
+         </span>
+        <p />
+        <p />
+
+    </div>
+
+    <div id="footer">
+        <li a><a href="index.html">Test Page 1</a>
+        </li>
+        <li a><a href="test_cam_by_basic_function_iphone_android.html">Test Page 2</a>
+        </li>
+    </div>
+
+  </body>
+  </html>

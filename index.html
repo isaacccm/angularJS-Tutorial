@@ -145,6 +145,13 @@ variable values -->
     <script type="text/javascript" src="js/webqr.js"></script>
     <script type="text/javascript" src="js/llqrcode.js"></script>
 
+    <script>
+    function myFunction() {
+        var x = document.getElementById("result").innerHTML;
+        name = x;
+    }
+    </script>
+
     <body>
 
     <div id="mainbody">
@@ -172,7 +179,7 @@ variable values -->
             <tr><td colspan="3" align="center">
             <div id="result"></div>
             <div id="result_by_server" ng-controller="FetchController">
-                {{name}}
+                <button ng-model="name" ng-click="findPerson()">Find Person</button>
                 <ul>
                     <lp ng-repeat="list in myData | filter:name:startWith">
                     {{      'ID:' + list.ukc_id +

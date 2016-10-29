@@ -11,6 +11,7 @@ var moz=false;
 var v=null;
 
 
+var qr_id = "jason";
 
 var imghtml='<div id="qrfile"><canvas id="out-canvas" width="320" height="240"></canvas>'+
     '<div id="imghelp">drag and drop a QRCode here'+
@@ -59,6 +60,7 @@ function handleFiles(f)
             gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
 
 			qrcode.decode(e.target.result);
+
         };
         })(f[i]);
         reader.readAsDataURL(f[i]);
@@ -105,12 +107,12 @@ function htmlEntities(str) {
 
 function read(a)
 {
-    var html="<br>";
-    if(a.indexOf("http://") === 0 || a.indexOf("https://") === 0)
-        html+="<a target='_blank' href='"+a+"'>"+a+"</a><br>";
-    html+="<b>"+htmlEntities(a)+"</b><br><br>";
-    document.getElementById("result").innerHTML=html;
-    qr_id= html;
+
+    //var html="<br>";
+    //if(a.indexOf("http://") === 0 || a.indexOf("https://") === 0)
+    //    html+="<a target='_blank' href='"+a+"'>"+a+"</a><br>";
+    //html+="<b>"+htmlEntities(a)+"</b><br><br>";
+    document.getElementById("result").innerHTML=htmlEntities(a);
 }
 
 function isCanvasSupported(){
@@ -245,15 +247,11 @@ function setimg()
 /*global angular */
 var app = angular.module('sendQRData', []);
 app.controller('FetchController', function($scope, $http) {
-
-    var qr_id = document.getElementById("result").innerHTML;
-    $scope.name = qr_id;
-
-
+    "use strict";
+    $scope.name = name;
 
     $http.get("http://54.227.229.1:3000/userlist").then(function(response) {
         $scope.myData = response.data;
-            console.log(qr_id);
     });
 
     //Seaches by the beginning of strings
@@ -262,4 +260,7 @@ app.controller('FetchController', function($scope, $http) {
       return lowerStr.indexOf(expected.toLowerCase()) == 0;
     }
 
+    $scope.findPerson = function myFunction() {
+        $scope.name = document.getElementById("result").innerHTML;
+    }
 });

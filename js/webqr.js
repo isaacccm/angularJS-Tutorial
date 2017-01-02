@@ -10,9 +10,6 @@ var webkit=false;
 var moz=false;
 var v=null;
 
-
-var qr_id = "jason";
-
 var imghtml='<div id="qrfile"><canvas id="out-canvas" width="320" height="240"></canvas>'+
     '<div id="imghelp">drag and drop a QRCode here'+
 	'<br>or select a file'+
@@ -250,7 +247,7 @@ app.controller('FetchController', function($scope, $http) {
     "use strict";
     $scope.name = name;
 
-    $http.get("http://54.227.229.1:3000/userlist").then(function(response) {
+    $http.get("http://54.227.229.1:3000/ukc/" + $scope.name).then(function(response) {
         $scope.myData = response.data;
     });
 
@@ -262,5 +259,8 @@ app.controller('FetchController', function($scope, $http) {
 
     $scope.findPerson = function myFunction() {
         $scope.name = document.getElementById("result").innerHTML;
+        $http.get("http://54.227.229.1:3000/ukc/" + $scope.name).then(function(response) {
+            $scope.myData = response.data;
+        });
     }
 });

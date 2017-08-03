@@ -1,0 +1,54 @@
+<style type="text/css">
+
+  body{
+      width:100%;
+      text-align:center;
+  }
+  img{
+      border:0;
+  }
+  #scan_by_file{
+      text-align:left;
+      margin: 15px auto;
+      width:400px;
+      height:300px;
+      border: solid;
+      border-width: 3px 3px 3px 3px;
+  }
+
+  /* ----------------------------------------------- */
+  /* FOOTER */
+  /* ----------------------------------------------- */
+
+  #footer{
+
+  }
+
+  .footer-nav {
+    background: none repeat scroll 0 0 transparent;
+    background-color: #444;
+    color: red;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    padding: 50px;
+  }
+
+  ul{
+      margin-bottom:0;
+      margin-right:40px;
+  }
+  li{
+      display:inline;
+      padding-right: 0.5em;
+      padding-left: 0.5em;
+      font-weight: bold;
+      border-right: 1px solid #333333;
+  }
+  li a{
+      text-decoration: none;
+      color: white;
+  }
+
+</style>

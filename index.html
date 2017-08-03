@@ -8,134 +8,15 @@
 variable values -->
 <html ng-app="sendQRData" >
     <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+
         <title>Camera Module</title>
-
-        <style type="text/css">
-        body{
-            width:100%;
-            text-align:center;
-        }
-        img{
-            border:0;
-        }
-        #result_by_server{
-            width:400px;
-            height:auto;
-            border: solid;
-            border-width: 1px 1px 1px 1px;
-            padding:20px;
-            width:44%;
-            font:16px arial,sans-serif;
-        }
-
-        #refresh_cam{
-            text-align:center;
-            margin: 15px;
-            width:200px;
-            height:40px;
-            border: solid;
-            border-width: 3px 3px 3px 3px;
-            background:yellow;
-        }
-        #main{
-            margin: 15px auto;
-            background:white;
-            overflow: auto;
-        	width: 100%;
-        }
-        #header{
-            background:white;
-            margin-bottom:15px;
-        }
-        #mainbody{
-            background: white;
-            width:100%;
-        	display:none;
-        }
-        #footer{
-             position: dynamic;
-             bottom: 0;
-             left: 0;
-             height: 100%;
-             background-color: white;
-             width: 100%;
-        }
-        #v{
-            width:400px;
-            height:300px;
-        }
-        #qr-canvas{
-            display:none;
-        }
-        #qrfile{
-            width:400px;
-            height:300px;
-        }
-        #mp1{
-            text-align:center;
-            font-size:35px;
-        }
-        #imghelp{
-            position:relative;
-            left:0px;
-            top:-160px;
-            z-index:100;
-            font:18px arial,sans-serif;
-            background:#f0f0f0;
-        	margin-left:35px;
-        	margin-right:35px;
-        	padding-top:10px;
-        	padding-bottom:10px;
-        	border-radius:20px;
-        }
-        .selector{
-            margin:0;
-            padding:0;
-            cursor:pointer;
-            margin-bottom:-5px;
-        }
-        #outdiv
-        {
-            width:400px;
-            height:300px;
-        	border: solid;
-        	border-width: 3px 3px 3px 3px;
-        }
-        #result{
-            width:400px;
-            height:30;
-            border: solid;
-        	border-width: 1px 1px 1px 1px;
-        	padding:20px;
-        	width:44%;
-            font:18px arial,sans-serif;
-        }
-
-        ul{
-            margin-bottom:0;
-            margin-right:40px;
-        }
-        li{
-            display:inline;
-            padding-right: 0.5em;
-            padding-left: 0.5em;
-            font-weight: bold;
-            border-right: 1px solid #333333;
-        }
-        li a{
-            text-decoration: none;
-            color: black;
-        }
-
-        #footer a{
-        	color: black;
-        }
-        .tsel{
-            padding:0;
-        }
-
-        </style>
-
     </head>
 
     <!-- Load the AngularJS library -->
@@ -183,9 +64,7 @@ variable values -->
                 <ul>
                     <lp ng-repeat="list in myData | filter:name:startWith">
                     {{      'ID:' + list.ukc_id +
-                        ', Date:' + list.date   +
-                        ', Name:' + list.name   +
-                        ', Meal:' + list.meal      }}
+                        ', Date:<div class="col span-1-of-2">' + list.meal      }}
                     </lp>
                 </ul>
 
@@ -197,12 +76,16 @@ variable values -->
     <canvas id="qr-canvas" width="800" height="300"></canvas>
     <script type="text/javascript">load();</script>
 
-    <div id="footer">
-        <li a><a href="index.html">Test Page 1</a>
-        </li>
-        <li a><a href="test_cam_by_basic_function_iphone_android.html">Test Page 2</a>
-        </li>
-    </div>
+    <footer>
+      <div id="row">
+        <div class="col span-1-of-2">
+          <ul class ="footer-nav">
+            <li><a href="index.html">Test Page 1</a></li>
+            <li><a href="cam_app.html">Test Page 2</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
 
   </body>
   </html>

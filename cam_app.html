@@ -1,0 +1,50 @@
+<!doctype html>
+
+<!-- This module is about how to connect to Camera through Iphone and Android OS.
+     The module is also ended up to send the user id that captured QR code.
+ -->
+
+<html ng-app="sendQRData" >
+    <head>
+        <title>Camera Module Test Page1</title>
+        <link rel="stylesheet" type="text/css" href="css/camera.css" media="screen" />
+    </head>
+
+    <!-- Load the AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+    <!-- Load the JS Module -->
+    <script src="js/exam4.js"></script>
+
+    <body>
+
+    <div id="scan_by_file" ng-controller="QRDataController">
+
+        <p />
+        This is an example for capturing QR code image through a file.
+        <p />
+        <input type="file" accept="image/*" capture="camera"></input>
+
+        <p />
+        <span>Take a picture for QR code, and then press
+            <button ng-click="sendData()" >Send</button>
+             button.
+         </span>
+        <p />
+        <p />
+
+    </div>
+
+    <footer>
+      <div id="row">
+        <div class="col span-1-of-2">
+          <ul class ="footer-nav">
+            <li><a href="index.html">Test Page 1</a></li>
+            <li><a href="cam_app.html">Test Page 2</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+  </html>

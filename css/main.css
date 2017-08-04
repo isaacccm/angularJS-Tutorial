@@ -12,7 +12,6 @@ img{
     border: solid;
     border-width: 1px 1px 1px 1px;
     padding:20px;
-    width:44%;
     font:16px arial,sans-serif;
 }
 
@@ -23,8 +22,16 @@ img{
     height:40px;
     border: solid;
     border-width: 3px 3px 3px 3px;
-    background:yellow;
+    background-color:#4CAF50;
+    color: white;
+    padding : 15px 32px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+#refresh_cam:hover{
+    background-color:white;
+    color: #4CAF50;
+}
+
 #main{
     margin: 15px auto;
     background:white;
@@ -88,7 +95,6 @@ img{
     border: solid;
     border-width: 1px 1px 1px 1px;
     padding:20px;
-    width:44%;
     font:18px arial,sans-serif;
 }
 
@@ -96,33 +102,28 @@ img{
 /* FOOTER */
 /* ----------------------------------------------- */
 
-#footer{
-
-}
-
-.footer-nav {
+footer{
   background: none repeat scroll 0 0 transparent;
-  background-color: #444;
-  color: red;
+  background-color: #322f2f;
+  color: white;
   bottom: 0;
+  width: auto;
   position: fixed;
   text-align: center;
   width: 100%;
-  padding: 50px;
+  padding: 50px 0px 50px 0px;
 }
 
-ul{
-    margin-bottom:0;
-    margin-right:40px;
-}
-li{
+footer li{
     display:inline;
+    text-align: center;
     padding-right: 0.5em;
     padding-left: 0.5em;
+    font:18px arial,sans-serif;
     font-weight: bold;
     border-right: 1px solid #333333;
 }
-li a{
+footer li a{
     text-decoration: none;
     color: white;
 }
